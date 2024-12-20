@@ -2,6 +2,8 @@
 
 use App\Admin\Controllers\UserController;
 use Illuminate\Routing\Router;
+use App\Admin\Controllers\PostCategoryController;
+use App\Admin\Controllers\PostController;
 
 Admin::routes();
 
@@ -14,7 +16,8 @@ Route::group([
 
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('/users', UserController::class);
-//    $router->resource('users', UserController::class);
+    $router->resource('/post-categories', PostCategoryController::class);
+    $router->resource('/posts', PostController::class);
 
 
 });
